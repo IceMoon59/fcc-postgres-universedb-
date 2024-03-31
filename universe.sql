@@ -268,6 +268,10 @@ ALTER TABLE ONLY public.star ALTER COLUMN star_id SET DEFAULT nextval('public.st
 -- Data for Name: blackhole; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
+INSERT INTO public.blackhole VALUES (1, NULL, 'bh1', NULL, false);
+INSERT INTO public.blackhole VALUES (2, NULL, 'bh2', NULL, false);
+INSERT INTO public.blackhole VALUES (3, NULL, 'bh3', NULL, false);
+INSERT INTO public.blackhole VALUES (4, NULL, 'bh4', NULL, false);
 
 
 --
@@ -343,7 +347,7 @@ INSERT INTO public.star VALUES (7, NULL, 565656, 'white', 'sis', 1);
 -- Name: blackhole_blackhole_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.blackhole_blackhole_id_seq', 1, false);
+SELECT pg_catalog.setval('public.blackhole_blackhole_id_seq', 4, true);
 
 
 --
@@ -380,6 +384,38 @@ SELECT pg_catalog.setval('public.star_star_id_seq', 7, true);
 
 ALTER TABLE ONLY public.blackhole
     ADD CONSTRAINT blackhole_pkey PRIMARY KEY (blackhole_id);
+
+
+--
+-- Name: blackhole constraint_name; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.blackhole
+    ADD CONSTRAINT constraint_name UNIQUE (name);
+
+
+--
+-- Name: planet constraintna; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.planet
+    ADD CONSTRAINT constraintna UNIQUE (name);
+
+
+--
+-- Name: star constraintnam; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.star
+    ADD CONSTRAINT constraintnam UNIQUE (name);
+
+
+--
+-- Name: galaxy constraintname; Type: CONSTRAINT; Schema: public; Owner: freecodecamp
+--
+
+ALTER TABLE ONLY public.galaxy
+    ADD CONSTRAINT constraintname UNIQUE (name);
 
 
 --
